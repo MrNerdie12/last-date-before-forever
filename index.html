@@ -47,7 +47,8 @@
 	<p>Would you go on a date with me on <strong>October 24</strong>? 💕</p>
 	<br />
 	<p>I know you're tired from school that day, but would you want to go on a date with me?</p>
-	<button onclick="showCountdown()">Yes, of course!</button>
+	<button onclick="showCountdown()">Yes, of course! 💕</button>
+	<button id="noBtn" onclick="vanish()">No... Aww 😢</button>
 	<div id="countdown" style="display: none;">
 	  <h2>Counting down to our date…</h2>
 	  <p id="timer" style="font-size: 1.5em; font-weight: bold;"></p>
@@ -79,6 +80,14 @@
     document.getElementById("timer").innerHTML =
       `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
+
+function vanish() {
+  const btn = document.getElementById("noBtn");
+  btn.style.transition = "opacity 0.5s ease";
+  btn.style.opacity = 0;
+  setTimeout(() => btn.style.display = "none", 500);
+}
 </script>
 </body>
+
 
