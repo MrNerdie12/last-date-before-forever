@@ -39,12 +39,12 @@
 	  box-shadow: 0 0 10px rgba(255, 102, 153, 0.2);
 	}
 
-	#noBtn {
+	noBtn {
 		position: relative;
 		transition: all 0.3s ease;
 	}
 		
-	#noBtn:hover {
+	noBtn:hover {
 		left: calc(100px - 200px * Math.random());
 		top: calc(50px - 100px * Math.random());
 	}
@@ -58,7 +58,7 @@
 	<br />
 	<p>I know you're tired from school that day, but would you want to go on a date with me?</p>
 	<button onclick="showCountdown()">Yes, of course! 💕</button>
-	<button id="noBtn" onclick="vanish()">No... Aww 😢</button>
+	<button id="noBtn">No... Aww 😢</button>
 	<div id="countdown" style="display: none;">
 	  <h2>Counting down to our date…</h2>
 	  <p id="timer" style="font-size: 1.5em; font-weight: bold;"></p>
@@ -99,6 +99,7 @@ function vanish() {
 }
 </script>
 </body>
+
 
 
 
