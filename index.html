@@ -38,6 +38,16 @@
 	  border-radius: 12px;
 	  box-shadow: 0 0 10px rgba(255, 102, 153, 0.2);
 	}
+
+	#noBtn {
+		position: relative;
+		transition: all 0.3s ease;
+	}
+		
+	#noBtn:hover {
+		left: calc(100px - 200px * Math.random());
+		top: calc(50px - 100px * Math.random());
+	}
   </style>
 </head>
 <body>
@@ -82,13 +92,14 @@
   }
 
 function vanish() {
-  const btn = document.getElementById("noBtn");
+  //const btn = document.getElementById("noBtn");
   btn.style.transition = "opacity 0.5s ease";
   btn.style.opacity = 0;
   setTimeout(() => btn.style.display = "none", 500);
 }
 </script>
 </body>
+
 
 
 
