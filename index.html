@@ -22,7 +22,6 @@
     button {
       font-size: 1.2em;
       padding: 10px 20px;
-			margin: 10px;
       background-color: #ff6699;
       color: white;
       border: none;
@@ -41,7 +40,11 @@
 	}
 	#noBtn {
 	  position: absolute;
+	  padding: 10px 20px;
 	  background-color: #ff6699;
+	  border: none;
+	  border-radius: 8px;
+	  cursor: pointer;
 	}
   </style>
 </head>
@@ -51,9 +54,12 @@
 	<p>Before we say “I do” on October 28, I’d love to take you out one last time — just us, just like old times.</p>
 	<p>Would you go on a date with me on <strong>October 22</strong>? at around 7PM onwards in Din Tai Fung BGC💕</p>
 	<br />
+	<p>I know you're tired from school that day, but would you want to go on a date with me?</p>
 	<div style="text-align: center;">
-		<p>I know you're tired from school that day, but would you want to go on a date with me?</p>
-	  <button onclick="showCountdown()">Yes, of course!</button>
+  	<button onclick="showCountdown()">Yes, of course!</button>
+	</div>
+	<br><br>
+	<div style="text-align: center;">
 	  <button id="noBtn">No 😢</button>
 	</div>
 	<div id="countdown" style="display: none;">
@@ -108,8 +114,6 @@
 	});
 </script>
 </body>
-
-
 
 
 
