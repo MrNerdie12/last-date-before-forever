@@ -39,6 +39,7 @@
 	  box-shadow: 0 0 10px rgba(255, 102, 153, 0.2);
 	}
 	#noBtn {
+	  position: absolute;
 	  padding: 10px 20px;
 	  background-color: #ff6699;
 	  border: none;
@@ -54,9 +55,13 @@
 	<p>Would you go on a date with me on <strong>October 22</strong>? at around 7PM onwards in Din Tai Fung BGC💕</p>
 	<br />
 	<p>I know you're tired from school that day, but would you want to go on a date with me?</p>
-	<button onclick="showCountdown()">Yes, of course! 💕</button>
-	<br />
-	<button id="noBtn">No... Aww 😢</button>
+	<div style="text-align: center;">
+  	<button onclick="showCountdown()">Yes, of course!</button>
+	</div>
+	<br><br>
+	<div style="text-align: center;">
+	  <button id="noBtn">No 😢</button>
+	</div>
 	<div id="countdown" style="display: none;">
 	  <h2>Counting down to our date…</h2>
 	  <p id="timer" style="font-size: 1.5em; font-weight: bold;"></p>
@@ -91,7 +96,9 @@
 
   const noBtn = document.getElementById("noBtn");
 
-	noBtn.style.position = "absolute";
+	noBtn.style.left = "50%";
+	noBtn.style.top = "400px";
+	noBtn.style.transform = "translateX(-50%)";
 	
 	noBtn.addEventListener("mouseenter", () => {
 	  const maxX = window.innerWidth - noBtn.offsetWidth;
@@ -99,13 +106,15 @@
 	
 	  const newX = Math.floor(Math.random() * maxX);
 	  const newY = Math.floor(Math.random() * maxY);
-		
-	  noBtn.innerText = "Nice try 😘";
+	
 	  noBtn.style.left = `${newX}px`;
 	  noBtn.style.top = `${newY}px`;
+	  noBtn.style.transform = "none";
+		noBtn.innerText = "Nice try 😘";
 	});
 </script>
 </body>
+
 
 
 
