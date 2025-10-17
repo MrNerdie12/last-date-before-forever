@@ -38,15 +38,16 @@
 	  border-radius: 12px;
 	  box-shadow: 0 0 10px rgba(255, 102, 153, 0.2);
 	}
-
-	noBtn {
-		position: relative;
-		transition: all 0.3s ease;
-	}
-		
-	noBtn:hover {
-		left: calc(100px - 200px * Math.random());
-		top: calc(50px - 100px * Math.random());
+	#noBtn {
+	  position: absolute;
+	  top: 300px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  padding: 10px 20px;
+	  background-color: #ccc;
+	  border: none;
+	  border-radius: 8px;
+	  cursor: pointer;
 	}
   </style>
 </head>
@@ -91,14 +92,22 @@
       `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
 
-function vanish() {
-  //const btn = document.getElementById("noBtn");
-  btn.style.transition = "opacity 0.5s ease";
-  btn.style.opacity = 0;
-  setTimeout(() => btn.style.display = "none", 500);
-}
+  const noBtn = document.getElementById("noBtn");
+
+	noBtn.addEventListener("mouseenter", () => {
+	  const maxX = window.innerWidth - noBtn.offsetWidth;
+	  const maxY = window.innerHeight - noBtn.offsetHeight;
+	
+	  const newX = Math.floor(Math.random() * maxX);
+	  const newY = Math.floor(Math.random() * maxY);
+		
+	  noBtn.innerText = "Nice try 😘";
+	  noBtn.style.left = `${newX}px`;
+	  noBtn.style.top = `${newY}px`;
+	});
 </script>
 </body>
+
 
 
 
